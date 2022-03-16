@@ -1,0 +1,22 @@
+ALGORITHM sum_distinct_elements-tab
+VAR
+    A : ARRAY_OF INTEGER[n];
+    B : ARRAY_OF INTEGER[m];
+    i,j : INTEGER
+    sum:INTEGER:=0;
+BEGIN
+    WHILE (i<n-1 ) DO
+        FOR j FROM 0 TO m-1 STEP 1  DO
+            IF (A[i]=B[j) THEN
+                
+                i=i+1;
+            ELSE
+                sum=A[i]+B[j]
+                i=i+1;
+            END_IF
+        END_FOR
+    END_WHILE
+END
+
+
+

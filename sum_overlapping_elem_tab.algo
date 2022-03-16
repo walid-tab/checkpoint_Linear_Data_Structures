@@ -1,0 +1,23 @@
+ALGORITHM sum_overlapping_elements-tab
+VAR
+    A : ARRAY_OF INTEGER[n];
+    B : ARRAY_OF INTEGER[m];
+    i,j : INTEGER
+    sum:INTEGER:=0;
+BEGIN
+    WHILE (i < n-1 and j < m-1) DO
+        IF (if A[i] = B[j]) THEN
+            sum= A[i] + B[j]
+            i=i+1;
+            j=j+1;
+        ELSE_IF (A[i] < B[j]) THEN
+            i=i+1;
+        ELSE
+            j=j+1;
+        END_IF
+
+    END_WHILE
+END
+
+
+ 

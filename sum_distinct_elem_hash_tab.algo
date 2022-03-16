@@ -1,0 +1,36 @@
+ALGORITHM sum_distinct_elem_hash_tab
+VAR
+    i,j :INTEGER;
+    A : ARRAY_OF INTEGER[n];
+    B : ARRAY_OF INTEGER[m];
+    htab : HASH_TABLE<INTEGER,INTEGER>
+    sum : INTEGER:=0;
+BEGIN
+        FOR i FROM 0 TO n-1 STEP 1  DO
+            IF (htab.lookup(A[i])) THEN
+                htab.insert(A[i], 1 + htab.get(A[i]));
+            ELSE
+                htab.insert(A[i], 1);
+            END_IF 
+        END_FOR
+        
+        FOR j FROM 0 TO m-1 STEP 1  DO
+            IF (htab.lookup(B[i])) THEN
+                htab.insert(B[i], 1 + htab.get(B[i]));
+            ELSE
+                htab.insert(B[i], 1);
+            END_IF
+        END_FOR
+        
+        FOR htab.key FROM 0 TO htab.key.length STEP 1  DO
+            IF (htab.value=1) THEN
+                sum+=htab.key;
+            END_IF
+        END_FOR
+        
+
+    
+END
+
+
+ 
